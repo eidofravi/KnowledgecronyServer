@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.app.model.CompleteAnswer;
-import com.app.repo.CompleteAnswerRepository;
+import com.app.model.Answer;
+import com.app.repo.AnswerRepository;
 import com.app.repo.ImageRepository;
  
 @CrossOrigin(origins = "http://localhost:4200")
@@ -26,7 +26,7 @@ public class ImageController {
 	ImageRepository repository;
 	
 	@Autowired
-	CompleteAnswerRepository answerRepository;
+	AnswerRepository answerRepository;
   
 	/*
 	 * @GetMapping(value = "/image") public ResponseEntity<InputStreamResource>
@@ -77,7 +77,7 @@ public class ImageController {
 //    }
 	
 	@GetMapping(value = "/image")
-    public CompleteAnswer getImageStream() throws IOException {
+    public Answer getImageStream() throws IOException {
 		return answerRepository.findByAnswerId(1L);
     }
 	

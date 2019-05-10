@@ -1,6 +1,7 @@
 package com.app.model;
 
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -29,18 +30,9 @@ public class Question {
 	@Column(name = "question")
 	private String question;
 	
-	/*
-	 * @OneToOne(cascade={CascadeType.ALL})
-	 * 
-	 * @JoinColumn(name="answerId", unique=true) private Answer answer;
-	 */
-	
-	/*
-	 * @OneToMany(cascade={CascadeType.ALL})
-	 * 
-	 * @JoinColumn(name="answerId", unique=true) private List<CompleteAnswer>
-	 * completeAnswer;
-	 */
+	@OneToMany(cascade=CascadeType.ALL)
+	@JoinColumn(name = "question_Id", referencedColumnName="id")
+	private Set<Answer> answer = new HashSet<Answer>();
 
 
 	public Question() {
