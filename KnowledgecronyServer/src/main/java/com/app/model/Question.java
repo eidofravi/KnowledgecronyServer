@@ -69,6 +69,16 @@ public class Question {
 	public void setQuestion(String question) {
 		this.question = question;
 	}
+
+	public Set<Answer> getAnswer() {
+		return answer;
+	}
+
+	public void setAnswer(Set<Answer> answer) {
+		this.answer = answer;
+	}
+	
+	
 	
 
 	}
